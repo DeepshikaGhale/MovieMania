@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DAF427C2A6E132C00C4F164 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF427B2A6E132C00C4F164 /* RegisterViewController.swift */; };
 		0DC162A42A637F0C007E2560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC162A32A637F0C007E2560 /* AppDelegate.swift */; };
 		0DC162A62A637F0C007E2560 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC162A52A637F0C007E2560 /* SceneDelegate.swift */; };
 		0DC162A82A637F0C007E2560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC162A72A637F0C007E2560 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DAF427B2A6E132C00C4F164 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DC162A02A637F0C007E2560 /* MovieMania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC162A32A637F0C007E2560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC162A52A637F0C007E2560 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				0DC162B12A637F0D007E2560 /* LaunchScreen.storyboard */,
 				0DC162B42A637F0D007E2560 /* Info.plist */,
 				0DC162AC2A637F0C007E2560 /* MovieMania.xcdatamodeld */,
+				0DAF427B2A6E132C00C4F164 /* RegisterViewController.swift */,
 			);
 			path = MovieMania;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC162A82A637F0C007E2560 /* ViewController.swift in Sources */,
+				0DAF427C2A6E132C00C4F164 /* RegisterViewController.swift in Sources */,
 				0DC162AE2A637F0C007E2560 /* MovieMania.xcdatamodeld in Sources */,
 				0DC162A42A637F0C007E2560 /* AppDelegate.swift in Sources */,
 				0DC162A62A637F0C007E2560 /* SceneDelegate.swift in Sources */,
