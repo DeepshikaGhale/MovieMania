@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
-class MovieTableViewController: UITableViewController {
+class MovieTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var movieData: [MovieModel] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,12 +48,17 @@ class MovieTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as!
-        MovieTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as? MovieTableViewCell else {
+               return UITableViewCell()
+           }
+
+        let movie = movieData[indexPath.row] // Replace with your array of MovieModel objects
+        cell.movie = movie
+        
            // Configure the cell...
         cell.MovieName.text = movieData[indexPath.row].jawSummary.title
         cell.ReleaseYear.text = String(movieData[indexPath.row].jawSummary.releaseYear)
-            
+        
         return cell
     }
     

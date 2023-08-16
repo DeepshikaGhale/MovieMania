@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
-class FavouritesTableViewController: UITableViewController {
-
+class FavouritesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    var fetchedResultsController: NSFetchedResultsController<MovieEntity>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,29 +21,67 @@ class FavouritesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        fetchData()
+        
+        tableView.reloadData()
+    }
+    
+    func fetchData(){
+        let moc = container.viewContext
+        let fetchRequest = NSFetchRequest<MovieEntity>(entityName: "MovieEntity")
+        
+        let sortDescriptor = NSSortDescriptor(key: "movieID", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            preconditionFailure("fetching favourite movies failed")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Update your table view or perform other actions here
+        fetchData()
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Update your table view or perform other actions here
+        fetchData()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // #warning Incomplete implementation, return the number of rows
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel!.text = fetchedResultsController.object(at: indexPath).movieName
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
