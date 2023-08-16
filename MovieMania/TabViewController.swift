@@ -14,13 +14,21 @@ class TabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //hide the back button
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.title = "MovieMania" //set the title
+        
         // Retrieve logged-in user data from UserDefaults
         let userDefaults = UserDefaults.standard
         if let encodedData = userDefaults.data(forKey: "loggedInUser"),
         let loggedInUser = try? JSONDecoder().decode(UserModel.self, from: encodedData) {
                     self.loggedInuser = loggedInUser
             }
+    }
+    
+    @objc func profileButtonTapped(){
+        
     }
     
     func logout() {

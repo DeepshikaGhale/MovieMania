@@ -2,8 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gGc-j0-5x7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,7 +138,7 @@
                             <outlet property="delegate" destination="XZV-SR-RCZ" id="t6y-Bu-rVe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="O54-y5-vhT"/>
+                    <tabBarItem key="tabBarItem" selectedImage="doc.text.image" catalog="system" systemItem="recents" id="O54-y5-vhT"/>
                     <navigationItem key="navigationItem" title="MovieMania" id="SF1-2z-NtF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKM-xR-3mu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,7 +156,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="XZV-SR-RCZ" kind="relationship" relationship="viewControllers" id="yhX-3g-v8N"/>
-                        <segue destination="UyQ-xD-BN2" kind="relationship" relationship="viewControllers" id="rFH-5g-3HM"/>
+                        <segue destination="xs9-Hg-dt2" kind="relationship" relationship="viewControllers" id="ucL-iF-RyF"/>
+                        <segue destination="UyQ-xD-BN2" kind="relationship" relationship="viewControllers" id="bHi-nE-CnO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MS3-lV-vsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -197,9 +197,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD6-8f-1un">
-                                <rect key="frame" x="240" y="78" width="78" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD6-8f-1un">
+                                <rect key="frame" x="285" y="79" width="78" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Logout"/>
                                 <connections>
@@ -211,7 +210,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hGj-sG-YVE" firstAttribute="trailing" secondItem="nD6-8f-1un" secondAttribute="trailing" constant="30" id="3Rm-5q-LIz"/>
                             <constraint firstItem="LMb-xy-kJS" firstAttribute="leading" secondItem="PpX-X8-AzA" secondAttribute="leading" id="6P8-jr-EHT"/>
+                            <constraint firstItem="nD6-8f-1un" firstAttribute="top" secondItem="hGj-sG-YVE" secondAttribute="top" constant="20" id="A3E-Wd-eOx"/>
                             <constraint firstItem="Ukz-WQ-ePV" firstAttribute="centerX" secondItem="4Fi-r4-uZ4" secondAttribute="centerX" id="GXW-5b-lz4"/>
                             <constraint firstItem="hGj-sG-YVE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="se4-ER-Q2W" secondAttribute="trailing" symbolic="YES" id="Gs8-YN-pBr"/>
                             <constraint firstItem="LMb-xy-kJS" firstAttribute="top" secondItem="PpX-X8-AzA" secondAttribute="bottom" constant="19" id="Jby-xq-AJG"/>
@@ -224,11 +225,8 @@
                             <constraint firstItem="se4-ER-Q2W" firstAttribute="top" secondItem="hGj-sG-YVE" secondAttribute="top" constant="33" id="wq2-WT-2VW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Mk1-yi-PgW"/>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="ahe-EF-fJy"/>
-                        <barButtonItem title="Item" id="CPv-FA-Vdu"/>
-                    </toolbarItems>
+                    <tabBarItem key="tabBarItem" selectedImage="person" catalog="system" systemItem="more" id="Mk1-yi-PgW"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="3bv-kr-U8O"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -239,7 +237,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrI-RD-nl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="1152"/>
+            <point key="canvasLocation" x="4619" y="1046"/>
+        </scene>
+        <!--Favourites Table View Controller-->
+        <scene sceneID="LJo-KD-fT0">
+            <objects>
+                <tableViewController id="xs9-Hg-dt2" customClass="FavouritesTableViewController" customModule="MovieMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3cT-Iz-5EB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MXu-v8-rHB">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXu-v8-rHB" id="kmW-XK-WOf">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xs9-Hg-dt2" id="9rV-nr-HnX"/>
+                            <outlet property="delegate" destination="xs9-Hg-dt2" id="fVG-Ap-rs2"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="OEd-u4-BKH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8us-aO-SU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3856" y="1396"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="N5S-y8-cMi">
@@ -349,26 +376,10 @@
             </objects>
             <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="xtg-m7-Ap2">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pIX-nG-pjW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnz-YK-b9x">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="UyQ-xD-BN2" kind="relationship" relationship="viewControllers" id="vNA-Fr-gRj"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BWc-2j-WbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2423.6641221374043" y="731.69014084507046"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="doc.text.image" catalog="system" width="115" height="128"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
