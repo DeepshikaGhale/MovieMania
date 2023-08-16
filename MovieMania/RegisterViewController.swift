@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController {
             openAlert(message: "Sorry! Username already take. Choose anaother one.")
         }else{
             manager.addUser(registeredUser)
-            performSegue(withIdentifier: "UserProfile", sender: registeredUser)
+//            performSegue(withIdentifier: "UserProfile", sender: registeredUser)
         }
         
     }
