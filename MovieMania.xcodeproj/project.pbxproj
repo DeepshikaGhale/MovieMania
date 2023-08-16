@@ -21,6 +21,8 @@
 		503183312A896C300000AEB1 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5031832F2A896C300000AEB1 /* MovieTableViewCell.xib */; };
 		503183332A8978780000AEB1 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503183322A8978780000AEB1 /* MovieTableViewController.swift */; };
 		503183352A89A57B0000AEB1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503183342A89A57B0000AEB1 /* Helper.swift */; };
+		509FA7EC2A8B2C1E006E2A64 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FA7EB2A8B2C1E006E2A64 /* ProfileViewController.swift */; };
+		509FA7EE2A8B33C6006E2A64 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FA7ED2A8B33C6006E2A64 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		5031832F2A896C300000AEB1 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		503183322A8978780000AEB1 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		503183342A89A57B0000AEB1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		509FA7EB2A8B2C1E006E2A64 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		509FA7ED2A8B33C6006E2A64 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				5031832F2A896C300000AEB1 /* MovieTableViewCell.xib */,
 				503183322A8978780000AEB1 /* MovieTableViewController.swift */,
 				503183342A89A57B0000AEB1 /* Helper.swift */,
+				509FA7EB2A8B2C1E006E2A64 /* ProfileViewController.swift */,
+				509FA7ED2A8B33C6006E2A64 /* TabViewController.swift */,
 				0D309A442A8AFF14006076F1 /* MovieMania_Helper.swift */,
 				0D309A462A8B092B006076F1 /* MovieModel.swift */,
 			);
@@ -170,8 +176,10 @@
 				0DC162AE2A637F0C007E2560 /* MovieMania.xcdatamodeld in Sources */,
 				0DC162A42A637F0C007E2560 /* AppDelegate.swift in Sources */,
 				0DC162A62A637F0C007E2560 /* SceneDelegate.swift in Sources */,
+				509FA7EC2A8B2C1E006E2A64 /* ProfileViewController.swift in Sources */,
 				0D309A452A8AFF14006076F1 /* MovieMania_Helper.swift in Sources */,
 				503183332A8978780000AEB1 /* MovieTableViewController.swift in Sources */,
+				509FA7EE2A8B33C6006E2A64 /* TabViewController.swift in Sources */,
 				503183352A89A57B0000AEB1 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
